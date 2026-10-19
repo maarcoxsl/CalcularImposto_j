@@ -1,5 +1,5 @@
 # Calculadora de Impostos em Java 🧾
-
+ ## Status do Projeto : 🟡 Em desenvolvimento
 Sistema simples em linha de comando (CLI) que simula o cálculo de impostos com base no salário mensal e na região do usuário.
 
 ## 📋 Descrição
