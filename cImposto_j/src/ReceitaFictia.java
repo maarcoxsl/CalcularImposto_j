@@ -1,8 +1,11 @@
 public class ReceitaFictia {
-        public String nomeContribuite;
+        public String nomeC;
+        public int idadeC;
+        public int regiaoC;
         private double salarioMensal;
         private double salarioAnual;
         public double totalPagar;
+        // public int dependentes;
 
         public double SetSalarioM(double salarioM) {
                this.salarioMensal = salarioM;
@@ -13,9 +16,14 @@ public class ReceitaFictia {
             return salarioMensal;
         }
 
+        // mudar nome desse metodo
         public double SalarioAnual() {
                salarioAnual = salarioMensal * 12;
                return salarioAnual;
+        }
+
+        public double GetSalarioAnual() {
+            return salarioAnual;
         }
 
         public void DescontoNorte() {
