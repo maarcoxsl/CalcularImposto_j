@@ -1,16 +1,32 @@
-
+// Implementações a fazer
+// area de login
+// Melhora de calcular o imposto
+// Possivel mudança no que faz a classe receita ficticia
+// Mudança de como faz para se aplicar a regiao
+// area reservada somente ao usuario
+// banco de dados com Arquivos
+// Possivel inserção do jbdc
+// Regras de negocio
 void main(){
     ReceitaFictia v1 = new ReceitaFictia();
     Contribuinte cont1 = new Contribuinte();
     var entradaUsuario = new Scanner(System.in);
 
     // Dados de cadastro
-    System.out.println("Insira o seu nome");
-    v1.nomeC= entradaUsuario.nextLine();
+    try {
+        System.out.println("Insira o seu nome: ");
+        v1.nomeC = v1.ValidaNome(entradaUsuario.next());
+    }catch(Exception e) {
+        System.out.println("Insira o seu Idade");
+    }
+    try {
+        //v1.idadeC = entradaUsuario.nextInt();
+        v1.idadeC = v1.ValidarIdade(entradaUsuario.nextInt());
+    } catch (Exception e) {
+        System.out.println("Erro ao tentar validar o seu nome");
+    }
 
-    System.out.println("Insira o seu Idade");
-    v1.idadeC = entradaUsuario.nextInt();
-
+    // em minha opnião para eu adicionar uma regra de negocio aqui a implementação para regiões tem que mudar
     System.out.println("Insira a sua região");
     System.out.println();
     System.out.println("1) Norte");
