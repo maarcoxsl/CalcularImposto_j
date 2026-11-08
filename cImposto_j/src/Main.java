@@ -5,8 +5,7 @@
 // Mudança de como faz para se aplicar a regiao
 // area reservada somente ao usuario
 // banco de dados com Arquivos
-// Possivel inserção do jbdc
-// Regras de negocio
+// Regras de negocio (Feitas - incluindo cadastro e região)
 void main(){
     ReceitaFictia v1 = new ReceitaFictia();
     Contribuinte cont1 = new Contribuinte();
@@ -15,16 +14,24 @@ void main(){
     // Dados de cadastro
     try {
         System.out.println("Insira o seu nome: ");
-        v1.nomeC = v1.ValidaNome(entradaUsuario.next());
+        cont1.nomeC = cont1.ValidaNome(entradaUsuario.next());
     }catch(Exception e) {
-        System.out.println("Insira o seu Idade");
+        System.out.println("nome inválido !!");
     }
     try {
-        //v1.idadeC = entradaUsuario.nextInt();
-        v1.idadeC = v1.ValidarIdade(entradaUsuario.nextInt());
+        System.out.println("Insira a sua idade");
+        cont1.idadeC = cont1.ValidarIdade(entradaUsuario.nextInt());
     } catch (Exception e) {
-        System.out.println("Erro ao tentar validar o seu nome");
+        System.out.println("Erro ao tentar validar o sua idade");
     }
+
+    System.out.println("Possui dependentes");
+    System.out.println();
+    System.out.println("1) Sim");
+    System.out.println("2) Não");
+
+    cont1.dependentesC = cont1.Dependentes(entradaUsuario.hasNextBoolean());
+
 
     // em minha opnião para eu adicionar uma regra de negocio aqui a implementação para regiões tem que mudar
     System.out.println("Insira a sua região");
@@ -33,8 +40,12 @@ void main(){
     System.out.println("2) Sul");
     System.out.println("3) Leste");
     System.out.println("4) Oeste");
-    v1.regiaoC = entradaUsuario.nextInt();
 
+   try {
+       cont1.regiaoC = v1.ValidarRegiao(entradaUsuario.nextInt());
+   } catch (Exception e) {
+       System.out.println("Erro ao tentar validar o regiao");
+   }
 
      // mudanças podem acontecer aqui ...
      switch(cont1.regiaoC){

@@ -1,31 +1,27 @@
 public class ReceitaFictia {
-        public String nomeC;
-        public int idadeC;
+        // rendimentos
+        // previdencia
+        // insencao
+        // pagador
+       // public String nomeC;
         public int regiaoC;
         private double salarioMensal;
         private double salarioAnual;
         public double totalPagar;
         // public int dependentes;
 
-       public String ValidaNome(String nomeCorreto){
-           nomeC = nomeCorreto;
-           if(nomeC.length() < 3){
-               throw new IllegalArgumentException("Tentativa de nome invalido");
 
-           }
-           return nomeC;
-       }
-
-        public int ValidarIdade(int idade){
-            idadeC = idade;
-            if(idadeC < 18 || idadeC > 99) {
-                throw new IllegalArgumentException("Idade Invalida. Tente novamente");
-            }
-            return idadeC;
-        }
         public double SetSalarioM(double salarioM) {
                this.salarioMensal = salarioM;
                return salarioMensal;
+        }
+
+        public int ValidarRegiao(int regiao){
+           regiaoC = regiao;
+           if(regiaoC <= 0 || regiaoC > 4) {
+               throw new IllegalArgumentException("Regiao Invalida. Tente novamente");
+           }
+        return regiaoC;
         }
 
         public double GetSalarioM() {
